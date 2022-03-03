@@ -1,6 +1,6 @@
-import { useTheme } from '@mui/material';
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
+import  ReactApexChart  from 'react-apexcharts';
+import { useTheme } from '@mui/material';
 import { useStyles } from './Styles';
 
 
@@ -12,6 +12,7 @@ interface ApexOptions{
     //      position?: string | undefined; orientation?
     //       "horizontal" | "vertical" | undefined; 
         }
+
 
 const NewChart = () => {
 
@@ -84,7 +85,7 @@ const NewChart = () => {
     ]
     return (
         <div>
-            <ReactApexChart
+              <ReactApexChart
                 options={options}
                 series={series}
                 type="bar"
