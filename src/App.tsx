@@ -10,6 +10,8 @@ import TodoListItem from './components/TodoListItem/index';
 import TodolList from './components/TodoIList';
 import { Grid, List,Typography } from '@mui/material';
 import { useStyles } from './components/Home/Styles';
+import NewChart from './components/NewChart';
+import DaubleChart from './components/DaubleChart';
 
 
 interface Todo {
@@ -67,13 +69,13 @@ function App() {
   return (
     <Grid className="App">
        <Header />
-       
+       <DaubleChart/>
        <List className={classes.form}>
        <Typography>My Todo List</Typography>
        <TodolList todos={todos} toggleTodo={toggleTodo} />
        <TodoForm addTodo={addTodo}/>
     </List>
-     
+     <NewChart/>
      <Footer/>
     </Grid>
     
