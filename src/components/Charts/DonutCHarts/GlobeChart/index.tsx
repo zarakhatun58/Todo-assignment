@@ -1,107 +1,113 @@
- import React,{useState} from 'react';
-// import  useTheme  from '@mui/material';
-// import  ReactApexChart  from 'react-apexcharts';
+import React, { useState } from 'react';
+import ReactApexChart from 'react-apexcharts';
+import { useTheme } from '@mui/material';
+import { ApexOptions } from 'apexcharts';
 
 
 // interface ApexOptions {
-   
-// options?: ApexOptions | undefined 
-//   }
+//     options?: ApexOptions | undefined,
+//     event:any[],
+//     chartContext:any[],
+//     config:any[],
+//     labels:string[],
+// }
+interface ApexChartProps { }
 
- const GlobeChart = () => {
-//     const theme = useTheme();
-//     const [chartData, setChartData]=useState({
-//         series: [44, 55, 13, 43, 22],
-//         options: {
-//           chart: {
-//             width: 380,
-//             type: 'pie',
-//           },
-//           labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-//           responsive: [{
-//             breakpoint: 480,
-//             options: {
-//               chart: {
-//                 width: 200
-//               },
-//               legend: {
-//                 position: 'bottom'
-//               }
-//             }
-//           }]
-//         },
-      
-//     })
+interface ApexChartState {
+    options?: any;
+    series?: any;
+}
 
-//     // const options: ApexOptions = {
-//     //     // colors: ["#157880", "#913B32"],
+const GlobeChart = () => {
+    const theme = useTheme();
 
-//     //     chart: {
-//     //         width: '100%',
-//     //         type: 'pie',
-//     //     },
-//     //     labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-//     //     theme: {
-//     //         monochrome: {
-//     //             enabled: true
-//     //         }
-//     //     },
-//     //     plotOptions: {
-//     //         pie: {
-//     //             dataLabels: {
-//     //                 offset: -5
-//     //             }
-//     //         }
-//     //     },
-//     //     title: {
-//     //         text: "Monochrome Pie"
-//     //     },
-//     //     // dataLabels: {
-//     //     //     formatter(val, opts) {
-//     //     //         const name = opts.w.globals.labels[opts.seriesIndex]
-//     //     //         return [name, val.toFixed(1) + '%']
-//     //     //     }
-//     //     // },
-//     //     legend: {
-//     //         show: false
-//     //     }
-//     // }
 
-//     // const series = [
-//     //     {
-//     //         name: ["Globe"],
-//     //         data: [25, 15, 44, 55, 41, 17],
+    const options: ApexOptions = {
+        colors: ["#157880", "#913B32", "#157880", "#913B32",],
 
-//     //     },
-//     //     // {
-//     //     //   name: ["Q2"],
-//     //     //   data: ["9", "21", "31", "30"],
+        labels: ["Apple", "Mango", "Orange", "Watermelon"],
+        theme: {
+            monochrome: {
+                enabled: false
+            }
+        },
+        responsive: [
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: "100%",
+                        type: "pie",
+                    },
+                    legend: {
+                        show: false
+                    },
+                },
+            },
+        ],
+        chart: {
+            events: {
+                dataPointSelection: (event, chartContext, config) => {
+                    console.log(config.w.config.labels[config.dataPointIndex]);
+                }
+            },
+            
+        },
+        legend: {
+            show: false
+        },
+        dataLabels: {
+            enabled: false
+        },
+    }
+    const series =[44, 55, 13, 43, 22]
+        
+        
+    
+    // const series = [
+    //     {
+    //         name: ["Globe"],
+    //         data: [25, 15, 44, 55, 41, ],
 
-//     //     // },
-//     //     // {
-//     //     //    name: ["Q3"],
-//     //     //   data: ["24", "44", "14", "16"],
-//     //     //   classNames: [],
-//     //     // },
-//     //     // {
-//     //     //    name: "Q4",
-//     //     //   data: ["11", "12", "33", "48"],
-//     //     // },
-//     //     // {
-//     //     //    name: "Feb Order",
-//     //     //   data: ["15", "23", "30", "30"],
-//     //     // },
-//     //     // {
-//     //     //    name: "Mar Order",
-//     //     //   data: ["34", "15", "21", "15"],
-//     //     // },
+    //     },
 
-//     // ]
-     return (
-         <>
-              {/* <ReactApexChart options={chartData.options} series={chartData.series} type="pie" width={380} /> */}
-         </>
-     );
- };
+    // ]
+    return (
+        <>
+            <ReactApexChart
+                options={options}
+                series={series}
+                type="pie"
+                width="280"
+            />
+        </>
+    );
+};
 
- export default GlobeChart;
+export default GlobeChart;
+
+/*
+        const [chartData, setChartData]=useState({
+            series: [44, 55, 13, 43, 22],
+            options: {
+              chart: {
+                width: 380,
+                type: 'pie',
+              },
+              labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            },
+
+        })
+
+*/

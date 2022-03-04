@@ -15,14 +15,17 @@ const StraightChart = () => {
             toolbar: {
                 show: false,
             },
-           
+            
         },
         dataLabels: {
             enabled: false
         },
         markers: {
-            size: 0,
-           
+            size:[3, 3],
+            shape: "circle",
+            hover:{
+                sizeOffset: 5,
+            },
         },
         stroke: {
             curve: 'smooth'
@@ -32,10 +35,18 @@ const StraightChart = () => {
             align: 'left'
         },
        
+       
         grid: {
-            row: {
-                colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                opacity: 0.5
+           
+            xaxis: {
+                lines: {
+                    show: false
+                },
+            },   
+            yaxis: {
+                lines: {
+                    show: false
+                },
             },
         },
         xaxis: {
@@ -68,3 +79,15 @@ const StraightChart = () => {
 };
 
 export default StraightChart;
+
+/*
+grid: {
+    show: false,
+    // row: {
+    //     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+    //     // opacity: 0.5
+        
+    // },
+},
+
+*/
