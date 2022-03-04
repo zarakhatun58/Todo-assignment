@@ -60,12 +60,12 @@ const DaubleChart = () => {
         },
         series: [
             {
-                name: "O'general(AED)",
+                name: "New",
                 data: ["44000", "55000", "41000"],
 
             },
             {
-                name: "Midea (AED)",
+                name: "Old",
                 data: ["9000", "21000", "31000"],
             },
 
