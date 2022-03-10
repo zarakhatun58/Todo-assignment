@@ -24,6 +24,7 @@ const GlobeChart = () => {
 
     const options: ApexOptions = {
         colors: ["#157880", "#913B32", "#157880", "#913B32",],
+        //  colors: ["#222222", "#3DB7C0", "#A4DDE1", "#ABB1B5", "#606C74" ],
 
         labels: ["Apple", "Mango", "Orange", "Watermelon"],
         theme: {

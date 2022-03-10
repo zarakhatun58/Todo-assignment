@@ -38,7 +38,7 @@ const RadiusChart = () => {
           inverseColors: true,
           opacityFrom: 1,
           opacityTo: 1,
-          stops: [0, 50, 100]
+          stops: [0, 50, 100],
           // colorStops: []
         }
       },

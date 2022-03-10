@@ -74,6 +74,7 @@ const StraightChart = () => {
                 options={options}
                 series={series}
                 type="line" height={350} />
+                
         </div>
     );
 };
