@@ -13,6 +13,15 @@ import StraightChart from './../Charts/LinesCharts/StraightChart/index';
 import PieChartFirst from './../Charts/DonutCHarts/PieChartFirst/index';
 import AllOverSweap from './../Charts/BarCHarts/AllOverSweap/index';
 import ImageUpload from './../ImageUpload/index';
+import Print from '../Print';
+import RadialCharts from './../Charts/DonutCHarts/RadialCharts/index';
+import SemiCircle from './../Charts/DonutCHarts/SemiCircle/index';
+import NewLineChart from '../Charts/BarCHarts/NewLineChart';
+import DynamicCharts from '../Charts/BarCHarts/DynamicCharts';
+import GaugeChart from '../Charts/GaugeChart';
+import SpeedGauge from '../Charts/BarCHarts/SpeedGauge';
+import RadialSpeed from '../Charts/RadialSpeed';
+
 
 const Home = () => {
     const classes=useStyles();
@@ -31,6 +40,14 @@ const Home = () => {
             <Grid item xs={4}><PieChartFirst/> </Grid> 
             <Grid item xs={4}><AllOverSweap/> </Grid> 
             <Grid item xs={4}><ImageUpload/> </Grid> 
+            <Grid item xs={4}><Print/> </Grid> 
+            <Grid item xs={4}><RadialCharts/> </Grid> 
+            <Grid item xs={4}><SemiCircle/> </Grid> 
+            <Grid item xs={4}><NewLineChart/> </Grid> 
+            <Grid item xs={4}><DynamicCharts/> </Grid> 
+            <Grid item xs={4}><GaugeChart/> </Grid> 
+            <Grid item xs={6}><SpeedGauge/> </Grid> 
+            <Grid item xs={6}><RadialSpeed/> </Grid> 
         </Grid>
         </>
     );
